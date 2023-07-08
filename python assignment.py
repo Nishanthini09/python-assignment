@@ -1,37 +1,38 @@
 #Programs on selection and Iteration operations. 
 #Get an integer input from a user. If the number is odd, then find the factorial of a number and find the number of digits in the factorial of the number. If the number is even, then check the given number is palindrome or not. 
-def factorial(n):
+def fact(n):    #factorial
     if n == 0 or n == 1:
         return 1
     else:
-        return n * factorial(n - 1)
+        return n * fact(n - 1)
 
 
-def is_palindrome(num):
+def is_palid(num):  #palindromde
     num = str(num)
     return num == num[::-1]
 
 
 def count_digits(num):
     return len(str(num))
-# Get input from the user
-num = int(input("Enter an integer: "))
+# Get input from user
+num = int(input("Enter a number: "))
 
-# Check if the number is odd or even
-if num % 2 == 1:
-    fact = factorial(num)
-    digit_count = count_digits(fact)
-    print("Factorial:", fact)
+if num % 2 == 1:              # Checking the number is odd or even
+    facts = fact(num)
+    digit_count = count_digits(facts)
+    print("Factorial:", facts)
     print("Number of digits in factorial:", digit_count)
 else:
     if is_palindrome(num):
         print("The number is a palindrome.")
     else:
         print("The number is not a palindrome.")
-        
+
+
+
 #Strings and its operations. 
 #Given two strings, PRINT (YES or NO) whether the second string can be obtained from the first by deletion of none, one or more characters.
-def can_obtain_string(string1, string2):
+def string(string1, string2):
     i = 0
     j = 0
 
